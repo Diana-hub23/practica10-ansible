@@ -13,8 +13,34 @@
     - name: Crear página personalizada
       copy:
         dest: /var/www/html/index.html
-        content: "<h1>Servidor configurado automáticamente con Ansible</h1>"
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <meta charset="UTF-8">
+              <title>Hola desde Ansible</title>
+              <style>
+                  body {
+                      background: #f0f4ff;
+                      color: #222;
+                      font-family: Arial, sans-serif;
+                      text-align: center;
+                      padding-top: 50px;
+                  }
+                  h1 {
+                      font-size: 48px;
+                      color: #3366ff;
+                  }
+                  p {
+                      font-size: 20px;
+                  }
+              </style>
+          </head>
+          <body>
+              <h1>🚀 Hola Mundo desde Ansible 🚀</h1>
+              <p>Esta página fue generada automáticamente usando Ansible.</p>
+          </body>
+          </html>
 
     - name: Reiniciar Apache dentro del contenedor
       command: apache2ctl restart
-
