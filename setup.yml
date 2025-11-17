@@ -1,0 +1,20 @@
+---
+- name: Configurar servidores Apache
+  hosts: servidores
+  become: true
+
+  tasks:
+    - name: Instalar Apache
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+
+    - name: Crear página personalizada
+      copy:
+        dest: /var/www/html/index.html
+        content: "<h1>Servidor configurado automáticamente con Ansible</h1>"
+
+    - name: Reiniciar Apache dentro del contenedor
+      command: apache2ctl restart
+
