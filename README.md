@@ -53,15 +53,19 @@ Clave: clave123
 
 3. Ejecutar el playbook
 ansible-playbook -i inventory.ini setup.yml
-🌐 Resultado final
+La página desplegada contiene un mensaje personalizado:
 
-Cada servidor queda accesible usando:
+“🚀 Hola Mundo desde Ansible 🚀”
 
-Servidor 1 → http://localhost:8081
+Ambos servidores muestran la misma página:
 
-Servidor 2 → http://localhost:8082
+http://localhost:8081
 
-Ambos mostrando la página web generada automáticamente.
+http://localhost:8082
+
+Repositorio GitHub con todo el código del proyecto:
+👉 https://github.com/Diana-hub23/practica10-ansible
+
 
 ✨ Autor
 
